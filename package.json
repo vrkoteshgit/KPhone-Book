@@ -1,0 +1,43 @@
+{
+  "name": "kphoneBook",
+  "version": "0.0.1",
+  "description": "Simple Phone book applicaton build with gulp.",
+  "main": "./dist/kphonebook.js",
+  "scripts": {},
+  "repository": {},
+  "devDependencies": {
+    "coffee-script": "1.7.1",
+    "connect": "2.14.5",
+    "express": "4.6.1",
+    "express-winston": "0.2.6",
+    "gulp": "3.9.0",
+    "gulp-coffee": "1.4.2",
+    "gulp-concat": "2.2.0",
+    "gulp-if": "1.2.2",
+    "gulp-if-else": "1.0.1",
+    "gulp-jade": "0.5.0",
+    "gulp-livereload": "1.3.1",
+    "gulp-minify-css": "0.3.1",
+    "gulp-replace": "0.5.2",
+    "gulp-stylus": "1.0.0",
+    "gulp-uglify": "0.2.1",
+    "winston": "0.7.3",
+    "yargs": "1.2.1",
+    "chai": "*",
+    "coffee-loader": "~0",
+    "gulp-mocha": "~0.4.1",
+    "gulp-plumber": "~0",
+    "gulp-rename": "~1",
+    "gulp-uglify": "~0",
+    "gulp-util": "~2",
+    "gulp-watch": "^4.3.5",
+    "istanbul": "*",
+    "mocha": "*",
+    "through2": "~0",
+    "webpack": "~1"
+  },
+  "engines": {
+    "node": ">=0.10",
+    "npm": ">=1.2.10"
+  }
+}
