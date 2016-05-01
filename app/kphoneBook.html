@@ -1,0 +1,68 @@
+<br>
+<div class="row">
+	<div class="col-lg-3"><h2>K Phone Book</h2></div>
+	<div class="col-lg-9">
+		<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>
+	</div>
+</div>
+<div class="header-style">
+	<div class="row">
+		<div class="col-lg-10"><h4>Name</h4></div>
+		<div class="col-lg-2"><button type="button" ng-click="modalOpen('Add')">Create New</button></div>
+	</div>
+	<div class="contact-list-table">
+		<div class="row" ng-repeat="contact in contacts"><hr>
+			<div class="col-lg-4">{{contact.lastName}} {{contact.firstName}} </div>
+			<div class="col-lg-1"><button type="button" ng-click="modalOpen('View', contact)">View</button></div>
+			<div class="col-lg-1"><button type="button" ng-click="modalOpen('Update', contact)">Edit</button></div>
+			<div class="col-lg-1"><button type="button" ng-click="deleteContact(contact)">Delete</button></div>
+		</div>
+	</div>
+
+	<p></p>
+<script type="text/ng-template" id="updatePhonebook.html">
+	<form name="frmPhoneBook">
+		<div class="modal-header">
+	      <h4 class="modal-title" translate>{{addBtnLabel}} Phone Book Item</h4>
+	    </div>
+	    <div class="modal-body">
+	    	<div ng-if="isUpdate">
+		    	<div class="row">
+					<div class="col-lg-3">First Name</div> <div class="col-lg-2"><input name="txtFirstName" type="text" ng-model="uContact.firstName" size="25" placeholder="First Name"></div>
+				</div><br>
+				<div class="row">
+					<div class="col-lg-3">Last Name</div> <div class="col-lg-2"><input name="txtLastName" type="text" ng-model="uContact.lastName" size="25" placeholder="Last Name"></div>
+				</div><br>
+				<div class="row">
+					<div class="col-lg-3">Phone No</div> <div class="col-lg-2"><input name="txtNumber" type="text" ng-model="uContact.number" size="10" placeholder="Phone Number"></div>
+				</div>
+			</div>
+			<div ng-if="isView">
+				<div class="row">
+					<div class="col-lg-3">First Name</div> <div class="col-lg-2">{{selectedContact.firstName}}</div>
+				</div><br>
+				<div class="row">
+					<div class="col-lg-3">Last Name</div> <div class="col-lg-2">{{selectedContact.lastName}}</div>
+				</div><br>
+				<div class="row">
+					<div class="col-lg-3">Phone No</div> <div class="col-lg-2">{{selectedContact.number}}</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="modal-footer">
+			<div class="row">
+				<div class="col-lg-8">
+					
+				</div>
+	    		<div class="col-lg-2">
+					<button ng-if="frmPhoneBook.$dirty" type="button" class="btn btn-default" ng-click="modalYes()" ng-disabled="confirmForm.$invalid">{{addBtnLabel}}</button>
+				</div>
+				<div class="col-lg-2">
+					<button type="button" class="btn btn-default" ng-click="modalCancel()" translate>Cancel</button>
+				</div>
+			</div>
+	    </div>
+	</form>
+</script>
+</div>
