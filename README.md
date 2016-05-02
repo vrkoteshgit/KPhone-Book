@@ -42,6 +42,6 @@ Open Command prompt then:
     
 4.  Run `gulp serve`
 
-5.  enter http://localhost:7000 in browser (Chrome) to start the phone book web application
+5.  Enter http://localhost:7000 in browser (Chrome) to start the phone book web application
 
 
