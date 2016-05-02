@@ -1,13 +1,13 @@
 <div>
-    <div class="modal-header">
+    <div class="modal-header background-light-blue">
         <button type="button" class="close" ng-click="vm.close();" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" translate>{{vm.options.title}}</h4>
+        <h4 class="modal-title" translate>Confirmation</h4>
     </div>
     <div class="modal-body">
         <span translate>{{vm.options.message}}</span>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" ng-click="vm.ok()" translate>{{vm.options.okLabel}}</button>
-        <button type="button" class="btn btn-default" ng-if="vm.options.confirm" ng-click="vm.cancel();" translate>{{vm.options.cancelLabel}}</button>
+        <button type="button" class="btn btn-success" ng-click="vm.ok()" translate>{{vm.options.okLabel}}</button>
+        <button type="button" class="btn btn-warning" ng-if="vm.options.confirm" ng-click="vm.cancel();" translate>{{vm.options.cancelLabel}}</button>
     </div>
 </div>
