@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc function
  * @name ktoolsApp.controller:AboutCtrl
@@ -14,18 +12,10 @@ angular.module('kphoneBookApp')
   	$rootScope.uContact = {};
     $rootScope.contacts =
 		[
-			{firstName:'dave', lastName:'jameson', number:'0546655837'},
-			{firstName:'larisa', lastName:'dorfman', number:'050923423'},
-			{firstName:'john', lastName:'oxford', number:'0529346353'},
-			/*{firstName:'dsdave', lastName:'jameson', number:'0543655837'},
-			{firstName:'flarisa', lastName:'dorfman', number:'050923423'},
-			{firstName:'sdjohn', lastName:'oxford', number:'0529346353'},
-			{firstName:'dave', lastName:'jameson', number:'0546655837'},
-			{firstName:'fdlarisa', lastName:'dorfman', number:'050323423'},
-			{firstName:'sdjohn', lastName:'oxford', number:'0529346353'},
-			{firstName:'daweve', lastName:'jameson', number:'0246655837'},
-			{firstName:'larewisa', lastName:'dorfman', number:'010923423'},*/
-			{firstName:'joqqhn', lastName:'oxford', number:'0522346353'}
+			{firstName:'Dave', lastName:'Jameson', number:0546655837},
+			{firstName:'Larisa', lastName:'Dorfman', number:050923423},
+			{firstName:'John', lastName:'Oxford', number:0529346353},
+			{firstName:'Joqqhn', lastName:'Oxford', number:0522346353}
 		];
 	$scope.isUpdate = false;
 	$scope.isView = false;
