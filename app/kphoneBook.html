@@ -7,35 +7,36 @@
 </div>
 <div class="header-style">
 	<div class="row">
-		<div class="col-lg-10"><h4>Name</h4></div>
-		<div class="col-lg-2"><button type="button" ng-click="modalOpen('Add')">Create New</button></div>
+		<div class="col-lg-8" style="color:#fff"><h4>Name</h4></div>
+		<div class="col-lg-2"><button type="button" class="btn btn-default" ng-click="modalOpen('Add')">Create New</button></div>
 	</div>
 	<div class="contact-list-table">
 		<div class="row" ng-repeat="contact in contacts"><hr>
-			<div class="col-lg-4">{{contact.lastName}} {{contact.firstName}} </div>
-			<div class="col-lg-1"><button type="button" ng-click="modalOpen('View', contact)">View</button></div>
-			<div class="col-lg-1"><button type="button" ng-click="modalOpen('Update', contact)">Edit</button></div>
-			<div class="col-lg-1"><button type="button" ng-click="deleteContact(contact)">Delete</button></div>
+			<div class="col-lg-6">{{contact.lastName}} {{contact.firstName}} </div>
+			<div class="col-lg-6"><button type="button" class="btn btn-info" ng-click="modalOpen('View', contact)">View</button> <button type="button" class="btn btn-success" ng-click="modalOpen('Update', contact)">Edit</button> <button type="button" class="btn btn-warning" ng-click="deleteContact(contact)">Delete</button></div>
 		</div>
 	</div>
 
 	<p></p>
 <script type="text/ng-template" id="updatePhonebook.html">
 	<form name="frmPhoneBook">
-		<div class="modal-header">
+		<div class="modal-header background-light-blue">
 	      <h4 class="modal-title" translate>{{addBtnLabel}} Phone Book Item</h4>
 	    </div>
 	    <div class="modal-body">
 	    	<div ng-if="isUpdate">
 		    	<div class="row">
-					<div class="col-lg-3">First Name</div> <div class="col-lg-2"><input name="txtFirstName" type="text" ng-model="uContact.firstName" size="25" placeholder="First Name"></div>
-				</div><br>
-				<div class="row">
-					<div class="col-lg-3">Last Name</div> <div class="col-lg-2"><input name="txtLastName" type="text" ng-model="uContact.lastName" size="25" placeholder="Last Name"></div>
-				</div><br>
-				<div class="row">
-					<div class="col-lg-3">Phone No</div> <div class="col-lg-2"><input name="txtNumber" type="text" ng-model="uContact.number" size="10" placeholder="Phone Number"></div>
+					<div class="col-lg-3">First Name</div> <div class="col-lg-4"><input name="txtFirstName" type="text" ng-model="uContact.firstName" size="20" ng-maxlength="20" placeholder="First Name" required></div>
 				</div>
+				<div class="row error" ng-show="frmPhoneBook.txtFirstName.$invalid"><div class="col-lg-3"></div><div class="col-lg-8">Enter valied EFirst name (max 20 char)</div></div><br>
+				<div class="row">
+					<div class="col-lg-3">Last Name</div> <div class="col-lg-4"><input name="txtLastName" type="text" ng-model="uContact.lastName" size="20" ng-maxlength="20" placeholder="Last Name" required></div>
+				</div>
+				<div class="row error" ng-show="frmPhoneBook.txtLastName.$invalid"><div class="col-lg-3"></div><div class="col-lg-8">Enter valied Last name (max 20 char)</div></div><br>
+				<div class="row">
+					<div class="col-lg-3">Phone No</div> <div class="col-lg-4"><input name="txtNumber" type="number" ng-model="uContact.number" size="10" ng-maxlength="10" placeholder="Phone Number" required></div>
+				</div>
+				<div class="row error" ng-show="frmPhoneBook.txtNumber.$invalid"><div class="col-lg-3"></div><div class="col-lg-8">Enter valied Phone Number (max 10 digits)</div></div>
 			</div>
 			<div ng-if="isView">
 				<div class="row">
@@ -49,17 +50,14 @@
 				</div>
 			</div>
 		</div>
-		
 		<div class="modal-footer">
 			<div class="row">
-				<div class="col-lg-8">
-					
-				</div>
+				<div class="col-lg-8"></div>
 	    		<div class="col-lg-2">
-					<button ng-if="frmPhoneBook.$dirty" type="button" class="btn btn-default" ng-click="modalYes()" ng-disabled="confirmForm.$invalid">{{addBtnLabel}}</button>
+					<button ng-if="frmPhoneBook.$dirty && frmPhoneBook.$valid	" type="button" class="btn btn-success" ng-click="modalYes()" ng-disabled="confirmForm.$invalid">{{addBtnLabel}}</button>
 				</div>
 				<div class="col-lg-2">
-					<button type="button" class="btn btn-default" ng-click="modalCancel()" translate>Cancel</button>
+					<button type="button" class="btn btn-warning" ng-click="modalCancel()" translate>Cancel</button>
 				</div>
 			</div>
 	    </div>
